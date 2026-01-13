@@ -5,3 +5,9 @@ __pycache__/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Google OAuth secrets
+client_secret_*.json
+*.credentials.json
+
+secrets/
