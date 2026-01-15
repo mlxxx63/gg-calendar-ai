@@ -5,10 +5,11 @@ SCOPES = [
     "openid",
     "https://www.googleapis.com/auth/userinfo.email",
     "https://www.googleapis.com/auth/userinfo.profile",
-    # minimal scope needed to create events:
+    # read access (needed for freebusy + listing)
+    "https://www.googleapis.com/auth/calendar.readonly",
+    # write access for creating events
     "https://www.googleapis.com/auth/calendar.events",
 ]
-
 
 def build_flow(state: str | None = None) -> Flow:
     flow = Flow.from_client_config(
@@ -26,5 +27,3 @@ def build_flow(state: str | None = None) -> Flow:
     )
     flow.redirect_uri = settings.GOOGLE_REDIRECT_URI
     return flow
-
-
